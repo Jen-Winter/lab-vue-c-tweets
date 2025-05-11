@@ -1,7 +1,7 @@
 <template>
   <div class="tweet">
     <img
-      src="https://i.imgur.com/9yw1Fyw.jpg"
+      :src=tweet.user.image
       class="profile"
       alt="profile"
     />
@@ -9,16 +9,15 @@
     <div class="body">
       <div class="top">
         <span class="user">
-          <span class="name">Ironhack</span>
-          <span class="handle">@ironhack</span>
+          <span class="name">{{ tweet.user.name }}</span>
+          <span class="handle">{{ tweet.user.handle }}</span>
         </span>
 
-        <span class="timestamp">Nov 30, 2020</span>
+        <span class="timestamp">{{ tweet.timestamp }}</span>
       </div>
 
       <p class="message">
-        On December 7th, we will be hosting a #webinar that will introduce you
-        to #SQL! Are you ready? 🚀
+        {{ tweet.message }}
       </p>
 
       <div class="actions">
@@ -39,3 +38,36 @@ a {
   color: #42b983;
 }
 </style>
+
+<script setup>
+
+const props = defineProps({
+  tweet : {
+    type: Object,
+    required: true
+  }
+})
+
+ /*const props = defineProps({
+  name : {
+    type: String,
+    required: true
+  },
+  handle : {
+    type: String,
+    required: true
+  },
+  img : {
+    type: String,
+    required: true
+  },
+  timestamp : {
+    type: String,
+    required: true
+  },
+  message : {
+    type: String,
+    required: true
+  }
+})*/
+</script>
