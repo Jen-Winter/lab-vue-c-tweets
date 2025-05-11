@@ -1,15 +1,15 @@
 <template>
-    <span class="user">
-        <span class="name">{{ tweet.Userdata.name }}</span>
-        <span class="handle">{{ tweet.Userdata.handle }}</span>
-    </span>
+  <span class="user">
+    <span class="name">{{ userData.name }}</span>
+    <span class="handle">{{ userData.handle }}</span>
+  </span>
 </template>
 
 <script setup>
 const props = defineProps({
   userData: {
     type: Object,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
